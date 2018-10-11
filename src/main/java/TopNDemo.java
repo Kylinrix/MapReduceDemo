@@ -19,7 +19,9 @@ import java.util.TreeSet;
  * @Auther: Kylinrix
  * @Date: 2018/10/11 15:20
  * @Email: Kylinrix@outlook.com
- * @Description: 使用TreeSet实现TopN
+ * @Description: 使用TreeSet数据结构实现TopN排序问题，
+ *               每组Mapper只需要排出N个最多频率的单词，减少计算量。
+ *
  */
 
 
@@ -145,7 +147,7 @@ public class TopNDemo {
         job.setOutputValueClass(Text.class);
 
 
-        FileInputFormat.addInputPath(job, new Path("/Users/lky/IdeaProjects/SparkDemo/output/part-r-00000"));
+        FileInputFormat.addInputPath(job, new Path("output/part-r-00000"));
         FileOutputFormat.setOutputPath(job, new Path("outputTopN/"));
 
         job.waitForCompletion(true);
