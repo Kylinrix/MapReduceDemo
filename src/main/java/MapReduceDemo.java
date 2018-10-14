@@ -104,6 +104,7 @@ public class MapReduceDemo {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(LongWritable.class);
 
+        int i = 0;
 
         // 指定自定义的Reducer阶段的任务处理类
         job.setReducerClass(WCReducer.class);
@@ -117,7 +118,6 @@ public class MapReduceDemo {
         // 执行提交job方法，直到完成，参数true打印进度和详情
          job.waitForCompletion(true);
          System.out.println("Finished");
-
     }
 
 
